@@ -42,3 +42,42 @@ int main(){
     // cout << endl;    
     return 0;
 }
+
+
+
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     map<int, vector< pair<string, int> > > input;
+//     int n,a,avilable = 0;
+//     string sub;
+//     cin>>n;
+//     for(int i=0;i<n;i++){
+//         cin>>a;
+//         if(a != -1){
+//             avilable++;
+//             cin>>sub;
+//             if(input.find(a) == input.end()){
+//                 vector<pair<string, int> > v;
+//                 v.push_back(pair<string, int>(sub, avilable));
+//                 input[a] = v;
+//             }else{
+//                 input[a].push_back(pair<string, int>(sub, avilable));
+//             }
+//         }else{
+//             sub = input.begin()->second[input.begin()->second.size()-1].first;
+//             a = input.begin()->second[input.begin()->second.size()-1].second;
+//             cout<<avilable-a<<" "<<sub<<endl;
+//             if(input.begin()->second.size() <= 1){
+//                 input.erase(input.begin()->first);
+//             }else{
+//                 input.begin()->second.pop_back();
+//             }
+//             avilable--;
+//         }
+//     }
+
+//     return 0;
+// }
