@@ -6,17 +6,23 @@ int main(){
   while(t--){
     cin>>n;
     odd = 0;
+    even = 0;
     while(n--){
       cin>>diff;
       if(diff%2 != 0){
         odd++;
+      }else{
+        even++;
       }
     }
-    cout<<odd<<endl;
     if(odd != 0 && odd%2 != 0){
       cout<<"YES"<<endl;
     }else{
-      cout<<"NO"<<endl;
+      if(odd !=0 && even != 0){
+        cout<<"YES"<<endl;
+      }else{
+        cout<<"NO"<<endl;
+      }
     }
   }
   return 0;
