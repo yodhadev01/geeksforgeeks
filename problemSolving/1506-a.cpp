@@ -4,13 +4,19 @@ using namespace std;
  
 int main()
 {
-    long long int t,x,y,z,a,b;
+    long long int t,x,y,z,a,b,q;
     cin>>t;
     while(t--){
 		cin>>x>>y>>z;
-		a = ((z%x)-1)*y;
-		b = ((z-(z%x))*x)/x;
-		cout<<a+y<<endl;
+		q = (z%x);
+		if(q==0){
+			q = x;
+		}
+		a = (q-1)*y;
+		b = ((z-q))/x;
+		// cout<<endl<<a<<" "<<b<<endl;
+		cout<<a+b+1<<endl;
+
     }
     return 0;
 }
