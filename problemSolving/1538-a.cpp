@@ -1,50 +1,46 @@
-#include <bits/stdc++.h> 
- 
+#include <bits/stdc++.h>
 using namespace std;
- 
+#define nl "\n"
 int main()
 {
-    long long int testCases;
-	cin>>testCases;
-
-	while(testCases--){
-		int size, input, minIndex, maxIndex, swaper, output;
-
-		cin>>size;
-
-		for (int iterator = 1; iterator <= size; iterator++) {
-			cin>>input;
-			if (input == 1) {
-				minIndex = iterator;
-			}
-			if (input == size) {
-				maxIndex = iterator;
-			}
-		}
-		if (minIndex > maxIndex) {
-			swaper = minIndex;
-			minIndex = maxIndex;
-			maxIndex = swaper;
-		}
-
-		cout<<minIndex<<" "<<maxIndex<<endl;
-		if (size % 2 == 0) {
-			output = minIndex < size/2 ? minIndex: size-minIndex+1;
-			size -= output;
-			maxIndex -= output;
-			output += maxIndex < size/2 ? maxIndex: size-maxIndex+1;
-		} else {
-			if (minIndex == (size/2)+1 || maxIndex == (size/2)+1) {
-				output = (size/2)+1;
-			} else {
-				output = minIndex <= size/2 ? minIndex: size-minIndex+1;
-				size -= output;
-				maxIndex -= output;
-				output += maxIndex <= size/2 ? maxIndex: size-maxIndex+1;
-			}
-		}
-		
-		cout<<output<<endl;
-	}
+ 
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+ 
+    int  t;
+    cin>>t;
+ 
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int l,s;
+ 
+        for(int i=1; i<=n; i++)
+        {
+            int x;
+            cin>>x;
+            
+            if(x==n) l=i;
+            if(x==1) s=i;
+        }
+        
+ 
+        if(s>l)
+        {
+            int t=s;
+            s=l;
+            l=t;
+        }
+ 
+        int k=s+min((l-s),(n-l+1));
+        int u=(n-l+1)+min(s,(l-s));
+ 
+        cout<<min(k,u)<<nl;
+ 
+ 
+ 
+    }
+ 
     return 0;
 }
